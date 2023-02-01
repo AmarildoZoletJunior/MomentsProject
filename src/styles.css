@@ -1,1 +1,70 @@
-/* You can add global styles to this file, and also import other style files */
+*{
+    padding: 0;
+    margin: 0;
+    font-family: Cambria;
+    box-sizing: border-box;
+    color: black;
+}
+
+a{
+    text-decoration: none;
+    color: black;
+    transition: .2s;
+}
+
+a:hover{
+    color: white;
+    padding: 5px;
+}
+
+
+/*Formulario */
+
+form{
+    width: 450px;
+    margin: 0 auto;
+}
+.form-group{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1em;
+}
+
+.form-group label{
+    font-weight: bold;
+    font-size: .9em;
+    margin-bottom: .4em;
+}
+
+.form-group input,.form-group textarea{
+padding: .6em;
+color: #777;
+font-size: .8em;
+border: none;
+border-radius: 2px;
+}
+.form-group textarea,.form-group input:not(.imagens){
+    background-color: rgb(227, 227, 227);
+}
+
+textarea:focus, input:focus {
+    box-shadow: 0 0 0 0;
+    outline: 0;
+}
+
+input[type="submit"]{
+    border: 2px solid transparent;
+    background-color: #0cb27a;
+    color: white;
+    transition: .4s;
+    padding: .6em 1em;
+    font-weight: bold;
+    font-size: 1.1em;
+    cursor:pointer;
+    border-radius: 5px;
+}
+
+input[type="submit"]:hover{
+    border: 2px solid black;
+    color: black;
+}
