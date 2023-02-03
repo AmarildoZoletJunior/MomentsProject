@@ -1,36 +1,33 @@
 <form (ngSubmit)="submit()" [formGroup]="momentform" #formDir="ngForm">
     <div class="form-group">
-        <label for="titulo">Titulo:</label>
-        <input type="text" placeholder="Conte-nos qual sera o titulo" formControlName="titulo" required>
-        <div *ngIf="titulo.invalid && formDir.submitted" class="validation-error">
-                <p *ngIf="titulo.errors?.['required']">O titulo é obrigatório.</p>
-                <p *ngIf="titulo.errors?.['minlength']">O titulo pode conter no minimo 3 caracteres.</p>
-                <p *ngIf="titulo.errors?.['maxlength']">O titulo pode conter no maximo 50 caracteres.</p>
+        <label for="Titulo">Titulo:</label>
+        <input type="text" placeholder="Conte-nos qual sera o titulo" formControlName="Titulo" required>
+        <div *ngIf="Titulo.invalid && formDir.submitted" class="validation-error">
+                <p *ngIf="Titulo.errors?.['required']">O titulo é obrigatório.</p>
+                <p *ngIf="Titulo.errors?.['minlength']">O titulo pode conter no minimo 3 caracteres.</p>
+                <p *ngIf="Titulo.errors?.['maxlength']">O titulo pode conter no maximo 50 caracteres.</p>
         </div>
     </div>
     <div class="form-group">
-        <label for="descricao">Descrição:</label>
-        <textarea type="text" placeholder="O que aconteceu?" formControlName="descricao"></textarea>
-        <div *ngIf="titulo.invalid && formDir.submitted" class="validation-error">
-            <p *ngIf="descricao.errors?.['required']">A descricao é obrigatória.</p>
-            <p *ngIf="descricao.errors?.['minlength']">A descricao pode conter no minimo 3 caracteres.</p>
-            <p *ngIf="descricao.errors?.['maxlength']">A descricao pode conter no maximo 50 caracteres.</p>
+        <label for="Descricao">Descrição:</label>
+        <textarea type="text" placeholder="O que aconteceu?" formControlName="Descricao"></textarea>
+        <div *ngIf="Descricao.invalid && formDir.submitted" class="validation-error">
+            <p *ngIf="Descricao.errors?.['required']">A descricao é obrigatória.</p>
+            <p *ngIf="Descricao.errors?.['minlength']">A descricao pode conter no minimo 3 caracteres.</p>
+            <p *ngIf="Descricao.errors?.['maxlength']">A descricao pode conter no maximo 50 caracteres.</p>
     </div>
     </div>
     <div class="form-group">
-        <label for="autor">Autor da Postagem:</label>
-        <input type="text" placeholder="Quem é o autor da história?" formControlName="autor">
-        <div *ngIf="autor.invalid && formDir.submitted" class="validation-error">
-            <p *ngIf="autor.errors?.['required']">O autor é obrigatório.</p>
-            <p *ngIf="autor.errors?.['minlength']">O autor pode conter no minimo 3 caracteres.</p>
+        <label for="AutorPostagem">Autor da Postagem:</label>
+        <input type="text" placeholder="Quem é o autor da história?" formControlName="AutorPostagem">
+        <div *ngIf="AutorPostagem.invalid && formDir.submitted" class="validation-error">
+            <p *ngIf="AutorPostagem.errors?.['required']">O autor é obrigatório.</p>
+            <p *ngIf="AutorPostagem.errors?.['minlength']">O autor pode conter no minimo 3 caracteres.</p>
     </div>
     </div>
     <div class="form-group">
       <label for="imagem">Coloque sua foto da postagem aqui:</label>
-      <input class="imagens" type="file" placeholder="Imagem" formControlName="imagem">
-      <div *ngIf="imagem.invalid && formDir.submitted" class="validation-error" >
-        <p *ngIf="imagem.errors?.['required']">A imagem é obrigatória.</p>
-</div>
+      <input class="imagens" (change)="OnFileSelect($event)" type="file" placeholder="Imagem">
     </div>
     <input type="submit" value="{{btnText}}">
 </form>

@@ -68,3 +68,17 @@ input[type="submit"]:hover{
     border: 2px solid black;
     color: black;
 }
+
+.validation-error p{
+    color: #DC3545;
+    animation: balanca 2s ease;
+}
+@keyframes balanca {
+    0% { transform: translateX(0) }
+    25% { transform: translateX(2px) }
+    50% { transform: translateX(-2px) }
+    75% { transform: translateX(2px) }
+    100% { transform: translateX(0) }
+   }
+
+

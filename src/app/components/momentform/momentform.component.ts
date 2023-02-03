@@ -1,5 +1,6 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import * as Interface from '../../Interface/Post';
+import { MomentsService } from 'src/app/services/moments.service';
 
 import { FormGroup,FormControl,Validators } from '@angular/forms';
 
@@ -10,35 +11,50 @@ import { FormGroup,FormControl,Validators } from '@angular/forms';
 })
 export class MomentformComponent implements OnInit {
   @Input() btnText!:string
-
+@Output() onSubmit = new EventEmitter<Interface.Post>()
   momentform!: FormGroup
-
+  momentFile!:File;
   ngOnInit():void{
     this.momentform = new FormGroup({
       id: new FormControl(''),
-      titulo: new FormControl('',[Validators.required,Validators.minLength(3),Validators.maxLength(50)]),
-      descricao: new FormControl('',[Validators.required,Validators.minLength(3),Validators.maxLength(800)]),
-      imagem: new FormControl('',[Validators.required]),
-      autor: new FormControl('',[Validators.required,Validators.minLength(3)])
+      Titulo: new FormControl('',[Validators.required,Validators.minLength(3),Validators.maxLength(50)]),
+      Descricao: new FormControl('',[Validators.required,Validators.minLength(3),Validators.maxLength(800)]),
+      AutorPostagem: new FormControl('',[Validators.required,Validators.minLength(3)]),
+      imagem: new FormControl('')
     })
   }
-  get titulo(){
-    return this.momentform.get('titulo')!;
+  get Titulo(){
+    return this.momentform.get('Titulo')!;
   }
-  get descricao(){
-    return this.momentform.get('descricao')!;
+  get Descricao(){
+    return this.momentform.get('Descricao')!;
   }
   get imagem(){
     return this.momentform.get('imagem')!;
   }
-  get autor(){
-    return this.momentform.get('autor')!;
+  get AutorPostagem(){
+    return this.momentform.get('AutorPostagem')!;
   }
-
-  submit(){
+constructor(private serviceMoments:MomentsService){
+}
+ async submit(){
     if(this.momentform.invalid){
       return;
     }
-    console.log("Enviou o formulário")
+
+    // const form = new FormData();
+    // form.append("files",this.momentFile,this.momentFile.name)
+    // this.serviceMoments.AdicionarImagem(form).subscribe();
+
+    this.onSubmit.emit(this.momentform.value)
   }
+
+  OnFileSelect(event: any){
+    const file:File = event.target.files[0];
+    // this.momentFile = file;
+    this.momentform.patchValue({imagem: file});
+  }
+
+  
+
 }
