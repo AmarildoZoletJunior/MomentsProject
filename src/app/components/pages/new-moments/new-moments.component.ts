@@ -17,35 +17,26 @@ export class NewMomentsComponent {
   }
 
   async CreateHandler(moment: Post){
+
     const formu = new FormData();
     formu.append("files",moment.imagem,moment.imagem.name);
 
-   this.serviceMoments.AdicionarImagem(formu).subscribe(x => console.log(x.body?.forEach(x => {
-    console.log(x.json)
-   })));
+   await this.serviceMoments.AdicionarImagem(formu).subscribe(x =>{
+    let number;
+    number = x[0].id
     const form = new FormData();
-    console.log(moment.imagem);
-
-
-
-
     const data = {
         "AutorPostagem": moment.AutorPostagem,
        "DataPostagem": Date.now(),
        "Descricao": moment.Descricao,
-       "Titulo": moment.Titulo
+       "Titulo": moment.Titulo,
+       "ImagemPost": String(number)
       }
+      console.log(data)
 
-
-    //   form.append("files",moment.ImagemPost);
-    // this.serviceMoments.AdicionarImagem(form).subscribe();
-
-
-
-  //   form.append("data",JSON.stringify(data))
-  // form.append("files.ImagemPost",JSON.stringify(imagem));
-
-  //   this.serviceMoments.CadastrarMoment(form).subscribe();
+  form.append("data",JSON.stringify(data));
+  this.serviceMoments.CadastrarMoment(form).subscribe(x => console.log(x));
+   });
   }
 
 
