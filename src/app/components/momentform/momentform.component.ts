@@ -42,10 +42,6 @@ constructor(private serviceMoments:MomentsService){
       return;
     }
 
-    // const form = new FormData();
-    // form.append("files",this.momentFile,this.momentFile.name)
-    // this.serviceMoments.AdicionarImagem(form).subscribe();
-
     this.onSubmit.emit(this.momentform.value)
   }
 

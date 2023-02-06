@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpResponse, HttpStatusCode } from '@angular/common/http';
+import { HttpClient, HttpContext, HttpParams, HttpResponse, HttpResponseBase, HttpStatusCode } from '@angular/common/http';
 import { Post } from '../Interface/Post';
 import { Observable } from 'rxjs';
 import { Attributes,RootObject } from '../Interface/teste';
@@ -18,8 +18,8 @@ ApiUrl: string = 'http://localhost:1337/api/posts'
     return this.http.get<Post>(this.ApiUrl + '/' + 1 + '?populate=*');
   }
 
-  AdicionarImagem(fileteste: FormData): Observable<HttpResponse<HttpStatusCode>>{
-   return this.http.post<HttpStatusCode>("http://localhost:1337/api/upload",fileteste,{observe: 'response'});
+  AdicionarImagem(fileteste: FormData): Observable<HttpResponse<Body[]>>{
+    return this.http.post<Body[]>("http://localhost:1337/api/upload",fileteste,{observe: 'response'});
   };
 
 }
