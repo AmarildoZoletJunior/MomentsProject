@@ -1,1 +1,9 @@
-<p>message works!</p>
+<div class="message" *ngIf="message.message">
+    <div class="message-header">
+        <h2>Mensagem do sistema</h2>
+        <button class="clear" (click)="message.clear()">
+            <img src="../../../assets/IconError.png" alt="">
+        </button>
+    </div>
+    <p>{{ message.message }}</p>
+</div>

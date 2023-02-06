@@ -1,0 +1,31 @@
+.sobre{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.sobre-mensagem{
+    display: flex;
+    justify-content: space-between;
+    width: 400px;
+    flex-direction: row;
+    margin-top:25px
+}
+.sobre h1{
+    margin-top: 80px;
+}
+.sobre span{
+    color:  #0cb27a;
+}
+
+
+
+
+.sobre a{
+    margin-top: 50px;
+    text-decoration: underline;
+}
+.sobre a:hover{
+    color: black;
+    text-decoration: underline;
+}

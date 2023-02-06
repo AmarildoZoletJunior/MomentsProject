@@ -13,6 +13,7 @@ import { FooterComponent } from './components/footer/footer.component';
 import { NewMomentsComponent } from './components/pages/new-moments/new-moments.component';
 import { MomentformComponent } from './components/momentform/momentform.component';
 import { MessageComponent } from './components/message/message.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { MessageComponent } from './components/message/message.component';
     AppRoutingModule,
     HttpClientModule,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
+    FontAwesomeModule
   ],
   providers: [],
   bootstrap: [AppComponent]

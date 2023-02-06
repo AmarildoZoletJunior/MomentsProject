@@ -1,7 +1,7 @@
-import { HttpResponse, HttpResponseBase, HttpStatusCode } from '@angular/common/http';
 import { Component } from '@angular/core';
+import { Route, Router} from '@angular/router';
 import { Post } from 'src/app/Interface/Post';
-import { RootObject } from 'src/app/Interface/teste';
+import { MessagesService } from 'src/app/services/messages.service';
 import { MomentsService } from 'src/app/services/moments.service';
 
 
@@ -13,7 +13,7 @@ import { MomentsService } from 'src/app/services/moments.service';
 export class NewMomentsComponent {
   btnText = 'Compartilhar';
   statusa!:any;
-  constructor(private serviceMoments:MomentsService){
+  constructor(private serviceMoments:MomentsService,private message:MessagesService,private rota:Router){
   }
 
   async CreateHandler(moment: Post){
@@ -35,18 +35,13 @@ export class NewMomentsComponent {
       console.log(data)
 
   form.append("data",JSON.stringify(data));
-  this.serviceMoments.CadastrarMoment(form).subscribe(x => console.log(x));
+ this.serviceMoments.CadastrarMoment(form).subscribe(x => console.log(x));
+  this.message.add("Momento adicionado com sucesso!");
+  this.rota.navigate(['/home']);
    });
   }
 
 
-  testinho!:any;
-  async TrazerNoticia(){
-    this.serviceMoments.teste().subscribe(x => {this.testinho = x});
-    setTimeout((x:any) =>{
-      console.log(this.testinho)
-    },2500)
- 
-  }
+
 
 }
