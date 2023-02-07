@@ -3,8 +3,7 @@ import { HttpClient, HttpContext, HttpParams, HttpResponse, HttpResponseBase, Ht
 import { Post } from '../Interface/Post';
 import { Observable } from 'rxjs';
 import { RootObject } from '../Interface/Upload';
-import {Root,Data,Attributes} from '../Interface/ResponsePost';
-import {Geral} from '../Interface/ResponseGet';
+import {Geral,Geral2} from '../Interface/ResponseGet';
 
 
 
@@ -24,6 +23,9 @@ ApiUrl: string = 'http://localhost:1337/api/'
 
   getMoments(): Observable<Geral>{
     return this.http.get<Geral>(this.ApiUrl + 'posts' + '?populate=*');
+  }
+  getMoment(id:number): Observable<Geral2>{
+    return this.http.get<Geral2>(this.ApiUrl + 'posts/' + id + '?populate=*');
   }
 }
 

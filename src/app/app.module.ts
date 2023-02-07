@@ -14,6 +14,7 @@ import { NewMomentsComponent } from './components/pages/new-moments/new-moments.
 import { MomentformComponent } from './components/momentform/momentform.component';
 import { MessageComponent } from './components/message/message.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { OneMomentComponent } from './components/pages/one-moment/one-moment.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     FooterComponent,
     NewMomentsComponent,
     MomentformComponent,
-    MessageComponent
+    MessageComponent,
+    OneMomentComponent
   ],
   imports: [
     BrowserModule,

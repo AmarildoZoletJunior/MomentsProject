@@ -1,15 +1,18 @@
 <div class="home-container">
     <h1>Veja o que estão compartilhando</h1>
-    <div *ngIf="moments.length > 0;else NoMoments">
+    <div class="search-container">
+        <form>
+            <input type="text" placeholder="Ou busque por momentos" (input)="BuscarMomento($event)">
+            <fa-icon [icon]="FaSearch"></fa-icon>
+        </form>
+    </div>
         <div class="moments-container">
-            <div *ngFor="let moment of moments">
-                <h2>{{moment.attributes.Titulo}}</h2>
+            <div class="moment" *ngFor="let moment of moments">
+                <img src="{{BaseUrlApi}}{{moment.attributes.ImagemPost.data.attributes.url}}" alt="{{moment.attributes.Titulo}}">
+                <h3>{{moment.attributes.Titulo}}</h3>
+                    <p class="date">Postado em: {{moment.attributes.DataPostagem}}</p>
+                    <p>Comentarios: {{moment.attributes.comentarios.data.length}}</p>
+                    <a routerLink="/moments/{{moment.id}}">Detalhes</a>
             </div>
         </div>
-    </div>
-    <ng-template #NoMoments>
-        <div class="nomoments">
-            <h1>Não foi encontrado nenhuma postagem</h1>
-        </div>
-    </ng-template>
 </div>

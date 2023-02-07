@@ -1,0 +1,89 @@
+.home-container{
+    display: flex;
+    align-items: center;
+    justify-content: baseline;
+    flex-direction: column;
+}
+.moments-container{
+    display: flex;
+    width: 80%;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.moment img{
+width: 250px;
+border-radius: 10px;
+}
+
+.moment a:hover{
+    color:  #0cb27a;
+}
+
+.moment a{
+    font-size: 20px;
+    border-radius: 10px;
+    background-color: black;
+    padding: 10px;
+    margin-top: 20px;
+    color:  white
+}
+
+.moment{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 50px;
+    border: 2px solid transparent;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 5px  0px 1.2em grey;
+}
+.moment:hover{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 50px;
+    border: 2px solid transparent;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 5px  0px 1.2em grey;
+    animation: vibrar .7s ease;
+}
+
+@keyframes vibrar{
+        0% { transform: rotate(0deg); }
+        25% { transform: rotate(5deg); }
+        50% { transform: rotate(0eg); }
+        75% { transform: rotate(-5deg); }
+        100% { transform: rotate(0deg); }
+}
+
+.search-container{
+    margin-top: .5em;
+    margin-bottom: 2em;
+    width: 100%;
+}
+
+.search-container form{
+    width: 30%;
+    position: relative;
+}
+
+.search-container fa-icon{
+    position: absolute;
+    top: 14px;
+    left: 8px;
+}
+
+.search-container input{
+    padding: .5em;
+    font-size: 20px;
+    width: 100%;
+    text-align: center;
+    border-radius: 10px;
+}
