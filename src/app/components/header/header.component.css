@@ -32,6 +32,12 @@ nav{
     font-size: 25px;
 }
 
+.active{
+    background-color: white;
+    padding: 5px;
+     border-radius: 10px;
+}
+
 @keyframes coradd{
     10%{
         color: darkgray;;
@@ -65,6 +71,6 @@ nav{
     color: white;
 }
 #add a:hover{
-    background-color: #139e6f;
+    background-color: #02efa0;
 border-radius: 10px;
 }

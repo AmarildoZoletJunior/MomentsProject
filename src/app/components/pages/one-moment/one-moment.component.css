@@ -1,0 +1,38 @@
+.container-moment{
+    width: 60%;
+    margin: auto;
+}
+.new-container{
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.ImagemTitulo {
+    border-radius: 20px;
+    width: 800px;
+    margin-bottom: 20px;
+}
+
+.new-body h1{
+    color: #0cb27a ;
+    font-size: 50px;
+    text-align: center;
+    margin-bottom: 50px;
+}
+.new-body p{
+    font-size: 30px;
+    text-align: left;
+    width: 100%;
+    margin: auto;
+}
+
+.new-date{
+    text-align: left;
+    width: 100%;
+    margin: auto;
+    font-size: 20px;
+    margin-top: 50px;
+}

@@ -39,7 +39,7 @@ FaSearch = faSearch;
   BuscarMomento(e : Event){
     let inp = e.target as HTMLInputElement;
     let valor = inp.value;
-    this.moments = this.allMoments.filter(x => x.attributes.Titulo.toLowerCase().includes(valor));
+    this.moments = this.allMoments.filter(x => x.attributes.Titulo.toLowerCase().includes(valor.toLowerCase()));
   }
 
 }
