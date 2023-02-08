@@ -1,11 +1,10 @@
 <form (ngSubmit)="submit()" [formGroup]="momentform" #formDir="ngForm">
     <div class="form-group">
         <label for="Titulo">Titulo:</label>
-        <input type="text" placeholder="Conte-nos qual sera o titulo" formControlName="Titulo" required>
+        <app-input type="text" placeholder="Insira o titulo" [control]="$any(momentform.controls['Titulo'])"> </app-input>
         <div *ngIf="Titulo.invalid && formDir.submitted" class="validation-error">
                 <p *ngIf="Titulo.errors?.['required']">O titulo é obrigatório.</p>
-                <p *ngIf="Titulo.errors?.['minlength']">O titulo pode conter no minimo 3 caracteres.</p>
-                <p *ngIf="Titulo.errors?.['maxlength']">O titulo pode conter no maximo 50 caracteres.</p>
+                <p *ngIf="Titulo.errors?.['minlength']">O titulo pode conter no minimo 5 caracteres.</p>
         </div>
     </div>
     <div class="form-group">
@@ -19,7 +18,7 @@
     </div>
     <div class="form-group">
         <label for="AutorPostagem">Autor da Postagem:</label>
-        <input type="text" placeholder="Quem é o autor da história?" formControlName="AutorPostagem">
+        <app-input type="text" placeholder="Insira o nome do autor" [control]="$any(momentform.controls['AutorPostagem'])"> </app-input>
         <div *ngIf="AutorPostagem.invalid && formDir.submitted" class="validation-error">
             <p *ngIf="AutorPostagem.errors?.['required']">O autor é obrigatório.</p>
             <p *ngIf="AutorPostagem.errors?.['minlength']">O autor pode conter no minimo 3 caracteres.</p>

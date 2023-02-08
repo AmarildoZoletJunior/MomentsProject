@@ -15,6 +15,7 @@ import { MomentformComponent } from './components/momentform/momentform.componen
 import { MessageComponent } from './components/message/message.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { OneMomentComponent } from './components/pages/one-moment/one-moment.component';
+import { InputComponent } from './components/input/input.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { OneMomentComponent } from './components/pages/one-moment/one-moment.com
     NewMomentsComponent,
     MomentformComponent,
     MessageComponent,
-    OneMomentComponent
+    OneMomentComponent,
+    InputComponent
   ],
   imports: [
     BrowserModule,
