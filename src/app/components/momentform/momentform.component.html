@@ -1,7 +1,8 @@
+<h2>{{btnText}} o seu <span>Momento!</span></h2>
 <form (ngSubmit)="submit()" [formGroup]="momentform" #formDir="ngForm">
     <div class="form-group">
         <label for="Titulo">Titulo:</label>
-        <app-input type="text" placeholder="Insira o titulo" [control]="$any(momentform.controls['Titulo'])"> </app-input>
+        <input type="text" placeholder="Conte-nos qual sera o titulo" formControlName="Titulo" required>
         <div *ngIf="Titulo.invalid && formDir.submitted" class="validation-error">
                 <p *ngIf="Titulo.errors?.['required']">O titulo é obrigatório.</p>
                 <p *ngIf="Titulo.errors?.['minlength']">O titulo pode conter no minimo 5 caracteres.</p>
@@ -13,12 +14,12 @@
         <div *ngIf="Descricao.invalid && formDir.submitted" class="validation-error">
             <p *ngIf="Descricao.errors?.['required']">A descricao é obrigatória.</p>
             <p *ngIf="Descricao.errors?.['minlength']">A descricao pode conter no minimo 3 caracteres.</p>
-            <p *ngIf="Descricao.errors?.['maxlength']">A descricao pode conter no maximo 50 caracteres.</p>
+            <p *ngIf="Descricao.errors?.['maxlength']">A descricao pode conter no maximo 50000 caracteres.</p>
     </div>
     </div>
     <div class="form-group">
         <label for="AutorPostagem">Autor da Postagem:</label>
-        <app-input type="text" placeholder="Insira o nome do autor" [control]="$any(momentform.controls['AutorPostagem'])"> </app-input>
+        <input type="text" placeholder="Conte-nos qual sera o titulo" formControlName="AutorPostagem" required>
         <div *ngIf="AutorPostagem.invalid && formDir.submitted" class="validation-error">
             <p *ngIf="AutorPostagem.errors?.['required']">O autor é obrigatório.</p>
             <p *ngIf="AutorPostagem.errors?.['minlength']">O autor pode conter no minimo 3 caracteres.</p>
@@ -26,7 +27,7 @@
     </div>
     <div class="form-group">
       <label for="imagem">Coloque sua foto da postagem aqui:</label>
-      <input class="imagens" (change)="OnFileSelect($event)" type="file" placeholder="Imagem">
+      <input  class="imagens" (change)="OnFileSelect($event)" type="file" placeholder="Imagem">
     </div>
     <input type="submit" value="{{btnText}}">
 </form>

@@ -36,9 +36,11 @@ export class NewMomentsComponent {
 
   form.append("data",JSON.stringify(data));
  this.serviceMoments.CadastrarMoment(form).subscribe(x => console.log(x));
-  this.message.add("Momento adicionado com sucesso!");
+  this.message.add("Momento editado com sucesso!");
   this.rota.navigate(['/home']);
    });
+
+
   }
 
 

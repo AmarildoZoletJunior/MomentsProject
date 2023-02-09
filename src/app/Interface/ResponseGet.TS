@@ -20,6 +20,7 @@ export interface Objecta {
     DataPostagem: string;
     comentarios: Comentarios;
     ImagemPost: ImagemPost;
+    imagem?:File
 }
 export interface Comentarios {
     data: CommentsList[];

@@ -9,5 +9,9 @@
             <p>Autor: {{Moment.attributes.AutorPostagem}}</p>
             <p>Data da postagem: {{Moment.attributes.DataPostagem}}</p>
         </div>
+        <div class="botoes">
+            <a class="botoes-body" id="update" routerLink="/moments/edit/{{Moment.id}}">Editar</a>
+            <a class="botoes-body" (click)="DeletarComponente()" id="delete">Deletar</a>
+        </div>
     </div>
 </div>
